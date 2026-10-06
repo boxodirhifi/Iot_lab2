@@ -7,12 +7,12 @@
 #define BLUE_LED_PIN   14
 
 int pressCount = 0;
-bool lastButtonState = LOW;  // idle state is LOW with this wiring
+bool lastButtonState = LOW;
 /****************************************************/
 void setup(void) 
 {
     Serial.begin(115200);
-    pinMode(BUTTON_PIN, INPUT);  // No pullup - external pulldown via R5
+    pinMode(BUTTON_PIN, INPUT);
     pinMode(RED_LED_PIN, OUTPUT);
     pinMode(GREEN_LED_PIN, OUTPUT);
     pinMode(YELLOW_LED_PIN, OUTPUT);
@@ -37,7 +37,7 @@ void loop(void) {
         digitalWrite(YELLOW_LED_PIN, (pressCount >= 3) ? HIGH : LOW);
         digitalWrite(BLUE_LED_PIN,   (pressCount >= 4) ? HIGH : LOW);
         
-        delay(200);  // Longer debounce for mechanical button
+        delay(200);
     }
     
     lastButtonState = currentButtonState;
