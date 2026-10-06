@@ -42,6 +42,7 @@ void loop(void)
 
     digitalWrite(BLUE_LED_PIN, HIGH); // Turn BLUE ON
     Serial.println("chase=BLUE");
+    delay(150);
 
     digitalWrite(BLUE_LED_PIN, LOW); // Turn BLUE OFF
 
